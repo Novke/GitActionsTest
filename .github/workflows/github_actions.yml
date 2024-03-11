@@ -11,3 +11,12 @@ jobs:
             - run: echo "Key is ${{secrets.KEY}}"
 
             - run: echo "Branch is ${{ github.ref }} ON repository ${{github.repository}}"
+
+            - name: Checkout repository code
+              uses: actions/checkout@v4
+              
+            - run: echo "The repo ${{ github.repository}} has been cloned"
+            - name: List files in the repository
+              run:
+                ls -l ${{github.workspace}}
+            - run: echo "Job status is ${{job.status}}"
