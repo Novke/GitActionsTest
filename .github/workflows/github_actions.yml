@@ -6,3 +6,8 @@ jobs:
         steps:
             - run: echo "This is automatically triggered job by ${{ github.event_name }}"
             - run: echo "OS is ${{runner.os}}"
+
+            - run: echo "URL is ${{vars.URL}}"
+            - run: echo "Key is ${{secrets.KEY}}"
+
+            - run: echo "Branch is ${{ github.ref }} ON repository ${{github.repository}}"
